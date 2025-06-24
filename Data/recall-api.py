@@ -20,7 +20,7 @@ def fetch_and_save(start, rows=5000, max_retries=5):
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
         'Authorization-User': 'kjamshad@umich.edu',
-        'Authorization-Key': 'fLzOCH0k7otndBOk',
+        'Authorization-Key': '**************',  # Replace with your actual key
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
     }
 
