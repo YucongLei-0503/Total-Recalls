@@ -2,30 +2,37 @@
 Team Members: Sam Boardman, Khola Jamshad, Riku Kurama, Yucong Lei, Shivani Prabala
 
 
-# Table of Contents
+## Table of Contents
+1. [Link-Text](#introduction)
+2. [Link-Text](#data-processing)
+3. [Link-Text](#data-exploration)
+4. [Link-Text](#methods-and-models)
+5. [Link-Text](#results)
+6. [Link-Text](#future-work)
+7. [Link-Text](#repository)
 
 
-# Introduction
+## Introduction
 
 
-# Data Processing
+## Data Processing
 
 
-# Data Exploration
+## Data Exploration
 
 
-# Methods and Models
+## Methods and Models
 
 
-# Results
+## Results
 
 
-# Future Work
+## Future Work
 
 
-# Repository
+## Repository
 
-## Data
+### Data
 recall_data_save.csv = the original data of recalled items from the FDA recalls API
 test.csv = cleaned FDA recalls API
 fda_inspections.xslx = all FDA inspections data from their website
@@ -35,14 +42,14 @@ final_engineered_features.csv = takes the inspection data, and creates a 'recall
 
 monthly_recall_percentage.csv = 
 
-## Predictive Models
+### Predictive Models
 
-### Baseline Model: 
+Baseline Model: 
 Dummy Classifier (Predict the most common class (usually 0, i.e., no recall) for everything.)
 Logistic Regression (A simple linear classifier.)
 
 
-## Inference Models
+### Inference Models
 
 
 
