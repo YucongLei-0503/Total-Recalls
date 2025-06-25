@@ -21,31 +21,43 @@ Our primary company KPIs are as follows
 
 
 ## Data Processing
-Our primary dataset is of [FDA recalls](https://datadashboard.fda.gov/oii/cd/recalls.htm) which we filter for food product type and remove miscellaneous features mostly relating to company descriptions. Feature engineering was done to categorize the states included in the distribution of the product and reasons for recall. We append a separate [FDA inspection](https://datadashboard.fda.gov/oii/cd/inspections.htm) dataset to provide a counterbalance of non-recalled food products. Entries in both datasets are matched using their FEI (FDA assigned identifying numbers), _recall bool_ is used to label any entry in both datasets as recalled (1) and the remaining as not recalled (0). 
+Our primary dataset is of [FDA recalls](https://datadashboard.fda.gov/oii/cd/recalls.htm) which we filter for food product type and remove miscellaneous features mostly relating to company descriptions. Feature engineering was done to categorize the states included in the distribution of the product and reasons for recall. We append a separate [FDA inspection](https://datadashboard.fda.gov/oii/cd/inspections.htm) dataset to provide a counterbalance of non-recalled food products. Entries in both datasets are matched using their FEI (FDA assigned identifying numbers), _recall bool_ is used to label any entry in both datasets as recalled (1) and the remaining as not recalled (0). We engineered a count of the cities mentioned as a new feature and one hot encoded all categorical variables. Since our data was imbalanced, with a lot more non-recalled products, we removed any entries associated with firms that had never faced recalls leaving us with 18287 entries on which we ran our model.
 
 For food related outbreaks, we used the CDC database [BEAM](https://data.cdc.gov/Foodborne-Waterborne-and-Related-Diseases/BEAM-Dashboard-Report-Data/jbhn-e8xn/data_preview) which records various disease outbreaks with different pathogen types such as salmonella and Campylobacter from 2018 to 2025. The features that we exploited in this data set are year, month and the pathogen type.
 
 ## Data Exploration
-![Feature selection](/Images/feature-selection.png)
+We investigated the FDA recall data initially with an interest in whether there was a correlation between the location of the firm and recalls, and also whether certain states were most affected by recalls due to distribution pathways of the product. We see a strong correlation between the firm locations and states most impacted indicating that the firm locations are a good indicator of whether a product will be recalled.
 
 ![US map of firms](/Images/geofirm.png)
 
 ![US map of recalled product distributions](/Images/geodist.png)
 
+Once we had integrated the recalls and inspections datasets, we also looked at temporal trends by grouping them by months and calculating recalls as a percentage of inspections, which would indicate whether inspection count and times affect recalls. We find that there seems to be some oscillatory behavior in the peaking of recall \% every 4-6 years. While we do not focus on covid years in this project, we did note a high in the covid years which was interesting since the absolute number of recalls was down hinting at a direct impact of workforce reduction. 
+
+![Monthly recalls as percent of inspections](/Images/monthlypercent.png)
+
+Since we had a good understanding of the spatial relation of the FDA recall-inspection data, we wanted to compare it with the outbreak data from BEAM. While there is some correlation particularly for the highest outbreak and recall areas, there are discrepancies. These may be due to the climate since northern areas are colder and therefore less hospitable to the pathogens (Campylobacter, STEC, Shigella, salmonella, and vibrio) that are associated with these outbreaks.
+
 ![US map of outbreaks](/Images/geooutbreaks.png)
 
+At this point, we ran a preliminary random forest classifier to see relative feature importance for predicting recalls and unsurprisingly find state and days since the last inspection to be most important. This lists the 15 features we included later in our models with the exception of city frequency.
+
+![Feature selection](/Images/feature-selection.png)
+
+
+
 ## Methods and Models
-# Predicting Recalls
-We used a total of 15 features including the state of inspections, days since last inspection etc.
+### Predicting Recalls
+We used a total of 14 features including the state of inspections, days since last inspection etc.
 
 Baseline Model: 
 Dummy Classifier (Predict the most common class (usually 0, i.e., no recall) for everything.)
 Logistic Regression (A simple linear classifier.)
 
-![Random forest decision tree](rftree.png)
+![Random forest decision tree](/Images/rftree.png)
 
-# Food Recalls and Outbreaks
-![Monthly recalls as percent of inspections](monthlypercent.png)
+### Food Recalls and Outbreaks
+
 
 ## Results
 
