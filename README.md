@@ -26,11 +26,13 @@ Our primary dataset is of [FDA recalls](https://datadashboard.fda.gov/oii/cd/rec
 For food related outbreaks, we used the CDC database [BEAM](https://data.cdc.gov/Foodborne-Waterborne-and-Related-Diseases/BEAM-Dashboard-Report-Data/jbhn-e8xn/data_preview) which records various disease outbreaks with different pathogen types such as salmonella and Campylobacter from 2018 to 2025. The features that we exploited in this data set are year, month and the pathogen type.
 
 ## Data Exploration
-!(/Images/feature-selection.png)
+![Feature selection](/Images/feature-selection.png)
 
-!(/Images/geofirm.png)
-!(Images/geodist.png)
-!(Images/geooutbreaks.png)
+![US map of firms](/Images/geofirm.png)
+
+![US map of recalled product distributions](/Images/geodist.png)
+
+![US map of outbreaks](/Images/geooutbreaks.png)
 
 ## Methods and Models
 # Predicting Recalls
@@ -40,10 +42,10 @@ Baseline Model:
 Dummy Classifier (Predict the most common class (usually 0, i.e., no recall) for everything.)
 Logistic Regression (A simple linear classifier.)
 
-!(rftree.png)
+![Random forest decision tree](rftree.png)
 
 # Food Recalls and Outbreaks
-!(monthlypercent.png)
+![Monthly recalls as percent of inspections](monthlypercent.png)
 
 ## Results
 
