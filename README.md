@@ -40,26 +40,33 @@ Since we had a good understanding of the spatial relation of the FDA recall-insp
 
 ![US map of outbreaks](/Images/geooutbreaks.png)
 
-At this point, we ran a preliminary random forest classifier to see relative feature importance for predicting recalls and unsurprisingly find state and days since the last inspection to be most important. This lists the 15 features we included later in our models with the exception of city frequency.
+At this point, we ran a preliminary random forest classifier to see relative feature importance for predicting recalls and unsurprisingly find state and days since the last inspection to be most important. This lists the 14 features we included later in our models with the exception of city frequency.
 
 ![Feature selection](/Images/feature-selection.png)
 
 
 
-## Methods and Models
+## Models
 ### Predicting Recalls
-We used a total of 14 features including the state of inspections, days since last inspection etc.
 
-Baseline Model: 
-Dummy Classifier (Predict the most common class (usually 0, i.e., no recall) for everything.)
-Logistic Regression (A simple linear classifier.)
+We investigated 3 different models in comparison to a baseline
+- As a baseline model, we used a dummy classifier (DC) which always predict the majority class.
+- Logistic regression (LR)
+- Random forest classification (RF)
+- Support vector machine (SVM)
 
-![Random forest decision tree](/Images/rftree.png)
+We first independently tested the RF and SVM models on the data and found that because of the imbalance in the data, we had low scores for predicting recalls. To counter this, we included balanced class weights for all 3 models and ran GridSearchCSV to find the best hyperparameters.
+
 
 ### Food Recalls and Outbreaks
+We used time series analysis for the inference modeling with 7 features: the month and 6 pathogens associated with the outbreaks. 
+We used two models: a naive seasonal model and a vector autoregression (VAR) model. For the VAR model, we combined the FDA and the BEAM datasets to better predict future recall probabilities, which however forced us to truncate our available dataset to the timeframe from 2018 to 2025. We also added some aspect of seasonality to the final VAR model by including the variable which records the average recall percentage in the same months over the past three years. 
 
 
 ## Results
+![Random forest decision tree](/Images/rftree.png)
+
+According to our kfold-split cross validation with k=5, the VAR model without this added seasonality has less predictive power than the naive seasonal model, but the final VAR model with this added seasonality outperformed the seasonal model. 
 
 
 ## Future Work
