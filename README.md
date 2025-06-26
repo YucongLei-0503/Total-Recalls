@@ -1,5 +1,5 @@
 # Total Recall
-Team Members: Sam Boardman, Khola Jamshad, Riku Kurama, Yucong Lei, Shivani Prabala
+Team Members: Samuel Boardman, Khola Jamshad, Riku Kurama, Yucong Lei, Shivani Prabala
 
 
 ## Table of Contents
