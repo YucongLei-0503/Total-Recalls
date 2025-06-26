@@ -81,7 +81,7 @@ After tuning, all 3 models were used with class weight balancing. LR improved it
 After running the cross-validation, we saw that the F1 and precision metrics for predicting recall were the best for RF compared to SVM and LR. Additionally, with RF and LR, we looked at probability based prediction (left: pre tuning and right: post tuning) and decided that RF performed consistently better in all our model tests.
 
 ![pre ROC](/Images/roc1.png)
-[post ROC](/Images/roc2.png)
+![post ROC](/Images/roc2.png)
 
 
 ## Future Work
