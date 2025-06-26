@@ -58,15 +58,30 @@ We first independently tested the RF and SVM models on the data and found that b
 
 To counter this, we included balanced class weights for all 3 models and ran GridSearchCSV to find the best hyperparameters focused on optimizing the recall metric since we were particularly interested in reducing the number of false negatives. SVM takes significantly longer to run since it does not scale well with large datasets. We attempted to counter this by reducing the dataset to only companies that had faced recalls before and while that improved the accuracy significantly, we were concerned that it introduced an unfavorable bias against companies that had a recalled product already. Therefore, we continued with the unreduced data.
 
-![Random forest decision tree](/Images/rftree.png)
 
 ## Results
-The dummy classifier always predicts the majority class - not recalled. Before hyperparameter tuning, we saw that LR performed just as bad as the dummy model. RF and SVM did much better with ... 
-however we still had too many false negatives.
+The dummy classifier always predicts the majority class - not recalled. 
 
-After tuning, all 3 models were used with class weight balancing. LR improved it's performance significantly... RF ..... SVM ....
+Before hyperparameter tuning, we saw that LR and SVM performed just as bad as the dummy model. RF did much better in the F1 score however we still had too many false negatives. Pre-tuning results:
 
-After running the cross-validation, we saw that the. ------ metrics were the best for RF compared to SVM. Additionally, with RF and LR, we looked at probability based prediction. Therefore, we chose RF as our final model.
+![Pre tuning results](/Images/res1.png) 
+
+![Pre LR CM](/Images/lr1.png)
+![Pre RF CM](/Images/rf1.png)
+![Pre SVM CM](Images/svm1.png)
+
+After tuning, all 3 models were used with class weight balancing. LR improved it's performance in predicting recalls significantly to a F1 score of 0.23. RF had only a slightly higher F1 score than LR and while SVM improved significantly from before, it did not compete with the other 2 models.
+
+![Post tuning results](/Images/res2.png) 
+
+![Post LR CM](/Images/lr2.png)
+![Post RF CM](/Images/rf2.png)
+![Post SVM CM](Images/svm2.png)
+
+After running the cross-validation, we saw that the F1 and precision metrics for predicting recall were the best for RF compared to SVM and LR. Additionally, with RF and LR, we looked at probability based prediction (left: pre tuning and right: post tuning) and decided that RF performed consistently better in all our model tests.
+
+![pre ROC](/Images/roc1.png)
+[post ROC](/Images/roc2.png)
 
 
 ## Future Work
