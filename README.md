@@ -13,7 +13,6 @@ Team Members: Samuel Boardman, Khola Jamshad, Riku Kurama, Yucong Lei, Shivani P
 
 
 ## Introduction
-Introduction
 Recent [workforce reductions at the FDA](https://www.theguardian.com/us-news/2025/apr/17/fda-suspends-quality-control-food-testing-staff-cuts) and the subsequent suspension of a quality-control program at its food-testing laboratories, have elucidated the need for an efficient contamination tracking of food products. Our aim is to predict which products are likely to face recalls and to understand the relationship between recalls and outbreaks using inference modeling to inform further efforts to reduce the risk and harm of contaminated food products.
 Our primary company KPIs are as follows
 - Prevention rate of contaminated products reaching consumers
