@@ -31,7 +31,7 @@ We investigated the FDA recall data initially with an interest in whether there 
 
 ![US map of recalled product distributions](/Images/geodist.png)
 
-Once we had integrated the recalls and inspections datasets, we also looked at temporal trends by grouping them by months and calculating recalls as a percentage of inspections, which would indicate whether inspection count and times affect recalls. We find that there seems to be some oscillatory behavior in the peaking of recall \% every 4-6 years. While we do not focus on covid years in this project, we did note a high in the covid years which was interesting since the absolute number of recalls was down hinting at a direct impact of workforce reduction. 
+Once we had integrated the recalls and inspections datasets, we also looked at temporal trends by grouping them by months and calculating recalls as a percentage of inspections, which would indicate whether inspection count and times affect recalls. We find that there seems to be some oscillatory behavior in the peaking of recall \% every 4-6 years. While we do not focus on the efffect of the COVID-19 pandeomic in this project, we did note a high in the years 2020 and 2021, which was interesting since the absolute number of recalls was down hinting at a direct impact of workforce reduction. 
 
 ![Monthly recalls as percent of inspections](/Images/monthlypercent.png)
 
@@ -93,7 +93,7 @@ Figures in order: VAR with no tuning, VAR with seasonality from previous year, V
 ![VAR 1 year seasonality](/Images/var2.png)
 ![VAR 3 years seasonality](/Images/var3.png)
 
-We expect that we can improve our model by including more precise data such as geographical locations and also implementing a regularized VAR model with seasonality (We dealt with seasonality by adding a new variable to the VAR model which captures seasonality, but one can also directly implement a VAR model with seasonality. Also, regularization appears beneficial since our VAR model has many parameters due the number of variables and lags.)  
+We expect that we can improve our model by including more precise data such as geographical locations and also implementing a regularized VAR model with seasonality (We dealt with seasonality by adding a new variable to the VAR model which captures seasonality, but one can also directly implement a VAR model with seasonality. Also, regularization appears beneficial since our. VAR model has many parameters due the number of variables and lags.)  
 
 Additionally, it may also help to look more closely at spatial data - states- and include the climate over time, along with keeping the reasons for recall from test.csv to run inference models and get a better idea of the factors that cause recall which may also help preventative measures for recalls.
 
