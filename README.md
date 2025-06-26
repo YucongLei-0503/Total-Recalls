@@ -112,7 +112,7 @@ Additionally, it may also help to look more closely at spatial data - states- an
 
 [random_forest_classification.ipynb](/Predictive_Models/random_forest_classification.ipynb) : testing and optimizing RF with GridSearchCSV
 
-[SVM_recall_cat.ipynb][/Predictive_Models/SVM_recall_cat.ipynb], [SVM_recall_2.ipynb](/Predictive_Models/SVM_recall_2.ipynb) : testing and optimizing SVM with GridSearchCSV
+[SVM_recall_cat.ipynb](/Predictive_Models/SVM_recall_cat.ipynb), [SVM_recall_2.ipynb](/Predictive_Models/SVM_recall_2.ipynb) : testing and optimizing SVM with GridSearchCSV
 
 [hybrid_SVM_recall.ipynb](/Predictive_Models/hybrid_SVM_recall.ipynb): optimizing SVM after removing companies without recalls
 
