@@ -98,6 +98,13 @@ Additionally, it may also help to look more closely at spatial data - states- an
 
 [monthly_recall_percentage.csv](/Data/monthly_recall_percentage.csv) : monthly recall as a percentage of inspections
 
+[cleaning.py](/Data/cleaning.py) and [testing.py](/Data/testing.py): cleaning and feature engineering recalls data requested through [recall-api.py](/Data/recall-api.py)
+
+[match_recall_inspections_data.ipynb](/Data/match_recall_inspections_data.ipynb): combining recalls and inspection data
+
+[feature_selection.ipynb](/Data/feature_selection.ipynb), [geospatial_plot.ipynb](/Data/geospatial_plot.ipynb), [recall_percentage_time_series.ipynb](/Data/recall_percentage_time_series.ipynb): exploratory notebooks. 
+
+
 ### Predictive Models
 [dummy_classifier_baseline_model.ipynb](/Predictive_Models/dummy_classifier_baseline_model.ipynb): testing dummy model
 
